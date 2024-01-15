@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package mathematics;
+
+service Mathematics {
+    rpc SumIntegers (RequestIntegers) returns (ResponseInteger) {}
+    rpc SubIntegers (RequestIntegers) returns (ResponseInteger) {}
+    rpc MultIntegers (RequestIntegers) returns (ResponseInteger) {}
+    rpc DevIntegers (RequestIntegers) returns (ResponseFloat) {}
+} 
+
+message RequestIntegers {
+    int32 num1 = 1;
+    int32 num2 = 2;
+}
+
+message ResponseInteger {
+    int32 result = 1;
+}
+
+message ResponseFloat {
+    float result = 1;
+}
